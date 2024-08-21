@@ -9,7 +9,6 @@
 body {
     font-family: "Inter";
     background-color: #ced4da;
-    /* overflow: hidden; */
 }
 
 svg {
@@ -19,23 +18,25 @@ svg {
 }
 
 .container {
-    /* max-width: 1080px; */
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     display: flex;
+    gap: 20px;
 }
 .editors {
-    width: 100vw;
+    flex-basis: 50%;
     display: flex;
     flex-direction: column;
     height: 100vh;
     gap: 30px;
 }
 
-.editor {
+.CodeMirror {
+    height: 150px; /* Initial collapsed height */
+    transition: height 0.3s ease;
 }
 
-.editor textarea {
-    max-height: 100%;
+.editor.active .CodeMirror {
+    height: 400px; /* Expanded height */
 }
 
 .editor h2 {
@@ -48,8 +49,40 @@ svg {
     align-items: center;
     gap: 5px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .output {
-    display: none;
+    flex-basis: 50%;
+}
+
+.output h2 {
+    margin-bottom: 15px;
+    color: #282a36;
+}
+
+.output iframe {
+    background-color: #fff;
+    height: 850px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .CodeMirror {
+        height: 50px; /* Initial collapsed height */
+        transition: height 0.3s ease;
+    }
+
+    .editor.active .CodeMirror {
+        height: 200px; /* Expanded height */
+    }
+
+    .output iframe {
+        height: 500px;
+    }
 }
