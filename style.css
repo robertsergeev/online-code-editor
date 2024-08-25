@@ -31,12 +31,12 @@ svg {
 }
 
 .CodeMirror {
-    height: 150px; /* Initial collapsed height */
+    height: 150px; /* Высота (начальная) */
     transition: height 0.3s ease;
 }
 
 .editor.active .CodeMirror {
-    height: 400px; /* Expanded height */
+    height: 400px; /* Высота, когда нажал */
 }
 
 .editor h2 {
@@ -74,12 +74,12 @@ svg {
     }
 
     .CodeMirror {
-        height: 50px; /* Initial collapsed height */
+        height: 50px; /* Высота на телефоне (начальная) */
         transition: height 0.3s ease;
     }
 
     .editor.active .CodeMirror {
-        height: 200px; /* Expanded height */
+        height: 200px; /* Высота, когда нажал */
     }
 
     .output iframe {

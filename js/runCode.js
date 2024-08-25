@@ -1,9 +1,9 @@
 const output = document.getElementById("output");
 
 function run() {
-    let htmlCode = html.getValue();
-    let cssCode = css.getValue();
-    let jsCode = js.getValue();
+    let htmlCode = htmlField.getValue();
+    let cssCode = cssField.getValue();
+    let jsCode = jsField.getValue();
 
     output.contentDocument.body.innerHTML = `
     ${htmlCode} 
